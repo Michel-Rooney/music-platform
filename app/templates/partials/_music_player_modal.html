@@ -9,11 +9,14 @@
             <h5 class="card-title">{{music.name}}</h5>
             <p class="card-text">{{music.artist}}</p>
           </div>
-          <div class="d-flex justify-content-around mb-5">
-            <button class="btn"><i style="font-size: 2em;" class="bi bi-arrow-left-circle"></i></button>
-            <button class="btn"><i style="font-size: 3em;" class="bi bi-play-circle"></i></button>
-            <button class="btn"><i style="font-size: 3em;" class="bi bi-pause-circle"></i></button>
-            <button class="btn"><i style="font-size: 2em;" class="bi bi-arrow-right-circle"></i></button>
+          <div id="buttons" class="d-flex justify-content-around mb-5">
+            <button id="previous" class="btn"><i style="font-size: 2em;" class="bi bi-arrow-left-circle"></i></button>
+            <button id="play" onclick="playMusic()" class="btn"><i style="font-size: 3em;" class="bi bi-play-circle"></i></button>
+            <button id="pause" onclick="pauseMusic()" class="btn"><i style="font-size: 3em;" class="bi bi-pause-circle"></i></button>
+            <button id="next" class="btn"><i style="font-size: 2em;" class="bi bi-arrow-right-circle"></i></button>
+          </div>
+          <div id="music-sound">
+            <audio id="audio{{music.id}}" src="{{music.sound.url}}"></audio>
           </div>
         </div>
         {% endfor %}
